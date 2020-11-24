@@ -7,8 +7,6 @@ module Authors
       @posts = current_author.posts
     end
 
-
-
     # GET /posts/new
     def new
       @post = current_author.posts.build
