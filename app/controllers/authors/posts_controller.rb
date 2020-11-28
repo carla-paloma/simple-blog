@@ -14,6 +14,7 @@ module Authors
 
     # GET /posts/1/edit
     def edit
+      @paragraph = @post.elements.build(element_type: 'paragraph')
     end
 
     # POST /posts
@@ -43,14 +44,14 @@ module Authors
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_post
-        @post = Post.find(params[:id])
-      end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_post
+      @post = Post.find(params[:id])
+    end
 
-      # Only allow a trusted parameter "white list" through.
-      def post_params
-        params.require(:post).permit(:title, :description)
-      end
+    # Only allow a trusted parameter "white list" through.
+    def post_params
+      params.require(:post).permit(:title, :description)
+    end
   end
 end
