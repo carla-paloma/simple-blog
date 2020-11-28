@@ -15,10 +15,10 @@
         <%= form.submit "Paragraph", class: 'btn btn-primary' %>
       <% end %>
     </div>
-    <% @post.elements.each do |element|  %>
+    <% @post.elements.each do |element| %>
     <% if element.persisted? %>
       <%= form_with(model: [@post, element]) do |form| %>
-        <%= form.text_area :content %>
+        <%= form.rich_text_area :content, class: 'editor' %>
         <%= form.submit "Save", class: 'btn btn-primary' %>
       <% end %>
      <% end %>
